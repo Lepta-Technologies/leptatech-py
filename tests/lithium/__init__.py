@@ -12,16 +12,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from ..exceptions import UnsupportedClientException
-
-__all__ = ["get_client_cls"]
-
-
-def get_client_cls(client):
-    if client == "nats":
-        from .nats import NATSClient
-        return NATSClient
-    if client == "test":
-        from .test import TestClient
-        return TestClient
-    raise UnsupportedClientException()
+from .config import ConfigTest

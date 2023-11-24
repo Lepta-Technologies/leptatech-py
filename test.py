@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # Copyright 2023 Lepta Technologies
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,16 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from ..exceptions import UnsupportedClientException
+import unittest
 
-__all__ = ["get_client_cls"]
+from tests import *
 
 
-def get_client_cls(client):
-    if client == "nats":
-        from .nats import NATSClient
-        return NATSClient
-    if client == "test":
-        from .test import TestClient
-        return TestClient
-    raise UnsupportedClientException()
+if __name__ == "__main__":
+    unittest.main()

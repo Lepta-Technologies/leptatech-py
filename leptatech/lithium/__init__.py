@@ -70,7 +70,7 @@ class Lithium:
             client_cls = clients.get_client_cls(self._config.client)
             self._client = client_cls()
             asyncio.get_event_loop().run_until_complete(self._client.initialise(self._config))
-        except Exception:
+        except:
             self._config = None
             self._client = None
             self._lock.release()
